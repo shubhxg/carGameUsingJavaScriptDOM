@@ -20,6 +20,7 @@ carStart.addEventListener('click', () => {
         carStartAudio.play();
     } else {
         errorAudio.play();
+        window.alert('Car is already started!');
     }
 
 });
