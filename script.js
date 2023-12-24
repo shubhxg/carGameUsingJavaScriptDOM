@@ -5,7 +5,7 @@ const carGearDown = document.getElementById('gdown');
 const autoPilot = document.getElementById('autoPilot');
 let isStarted = false;
 
-// Define audio elements
+// audio elements
 const carStartAudio = document.getElementById('carStartAudio');
 const carGearUpAudio = document.getElementById('carGearUpAudio');
 const carGearDownAudio = document.getElementById('carGearDownAudio');
