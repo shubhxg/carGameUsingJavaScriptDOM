@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car game</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/carimage.jpg">
+</head>
+
+<body>
+    <div class="whole-wrapper">
+        <div class="img-container">
+            <h2></h2>
+            <img src="assets/images/carimage.jpg" alt="carimage" id="car_img">
+
+            <audio id="carStartAudio">
+                <source src="assets/sounds/car_start.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="carGearUpAudio">
+                <source src="assets/sounds/car_gearup.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="carGearDownAudio">
+                <source src="assets/sounds/car_riding.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="autoPilotAudio">
+                <source src="assets/sounds/car_riding.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="keysCling">
+                <source src="assets/sounds/keysCling.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="errorSound">
+                <source src="assets/sounds/errorSound.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="buttons-container">
+            <div class="btn green" id="start" onclick="startShaking()">Start</div>
+            <div class="btn green" id="gup">Gear up</div>
+            <div class="btn red" id="gdown">Gear Down</div>
+            <div class="btn red" id="stop">Stop</div>
+            <div class="btn purple" id="autoPilot">Auto Pilot</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
