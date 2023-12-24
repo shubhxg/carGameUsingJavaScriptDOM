@@ -24,7 +24,7 @@ body {
   right: 150px;
   top: 200px;
   cursor: pointer;
-  border: 1px solid grey;
+  border: 1px solid rgb(53, 53, 53);
 }
 
 .btn {
@@ -55,7 +55,7 @@ body {
 }
 
 #car_img {
-  max-width: 90%;
+  max-width: 40%;
   display: block;
 }
 
@@ -66,6 +66,10 @@ body {
     align-items: flex-start;
     margin-top: 2rem;
     height: 40vh;
+  }
+
+  #car_img {
+    max-width: 80vw;
   }
 
   .whole-wrapper {
@@ -89,8 +93,8 @@ body {
 
   .btn {
     width: 100%;
-    margin: 0.6rem;
-    height: 2.6rem;
+    margin: 0.4rem;
+    height: 2.4rem;
   }
 }
 

@@ -12,17 +12,19 @@ const carGearDownAudio = document.getElementById('carGearDownAudio');
 const autoPilotAudio = document.getElementById('autoPilotAudio');
 const keysClingAudio = document.getElementById('keysCling')
 const errorAudio = document.getElementById('errorSound')
+const carVideo = document.getElementById('car_img');
 
 // car start
 carStart.addEventListener('click', () => {
     if (!isStarted) {
         isStarted = true;
         carStartAudio.play();
+        carVideo.muted = true; // Mute the video to comply with autoplay policies
+        carVideo.play();
     } else {
         errorAudio.play();
         window.alert('Car is already started!');
     }
-
 });
 
 // car gearup
@@ -117,4 +119,12 @@ function startShaking() {
 function startTheCarAlert() {
     keysClingAudio.play();
     window.alert("First start the car!")
+}
+
+function carVideoPlay() {
+    if (carVideo.paused || carVideo.ended) {
+        // Mute the video to comply with autoplay policies
+        carVideo.muted = true;
+        carVideo.play();
+    }
 }
