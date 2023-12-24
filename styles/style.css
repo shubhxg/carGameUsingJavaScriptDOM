@@ -3,7 +3,9 @@ body {
   color: white;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0px;
   padding: 0px;
 }
@@ -46,6 +48,10 @@ body {
 
 .purple {
   background-color: rgb(168, 42, 168);
+}
+
+.prevent-selection {
+  user-select: none;
 }
 
 #car_img {
