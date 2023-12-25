@@ -114,11 +114,11 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.shake {
+/* .shake {
   animation: shake 0.4s ease-in;
-}
+} */
 
-@keyframes shake {
+/* @keyframes shake {
 
   0%,
   100% {
@@ -144,4 +144,4 @@ body {
   75% {
     transform: translateX(-6px);
   }
-}
+} */
