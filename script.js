@@ -77,6 +77,7 @@ carStop.addEventListener("click", () => {
 // honk
 honkButton.addEventListener('click', () => {
     if (isStarted) {
+        honkAudio.currentTime = 0;
         honkAudio.play();
     } else {
         startTheCarAlert();
