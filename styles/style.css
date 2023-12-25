@@ -24,7 +24,11 @@ body {
   right: 150px;
   top: 200px;
   cursor: pointer;
-  border: 1px solid rgb(53, 53, 53);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.buttons-container :focus{
+  outline: none;
 }
 
 .btn {
