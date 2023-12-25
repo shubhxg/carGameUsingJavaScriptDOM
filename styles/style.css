@@ -21,8 +21,8 @@ body {
 
 .buttons-container {
   position: absolute;
-  right: 150px;
-  top: 200px;
+  right: 130px;
+  top: 160px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -32,6 +32,7 @@ body {
 }
 
 .btn {
+  font-size: 1.3rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -44,14 +45,17 @@ body {
 
 .red {
   background-color: rgb(176, 21, 21);
+  border: 3px solid rgb(117, 10, 10);
 }
 
 .green {
   background-color: green;
+  border: 3px solid rgb(0, 85, 0);
 }
 
 .purple {
   background-color: rgb(168, 42, 168);
+  border: 3px solid rgb(99, 3, 99);
 }
 
 .prevent-selection {
@@ -96,6 +100,7 @@ body {
   }
 
   .btn {
+    font-size: 1.1rem;
     width: 100%;
     margin: 0.4rem;
     height: 2.4rem;
