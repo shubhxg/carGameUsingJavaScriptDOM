@@ -3,6 +3,7 @@ const carStop = document.getElementById('stop');
 const carGearUp = document.getElementById('gup');
 const carGearDown = document.getElementById('gdown');
 const autoPilot = document.getElementById('autoPilot');
+const honkButton = document.getElementById('honk');
 let isStarted = false;
 
 // audio elements
@@ -13,6 +14,7 @@ const autoPilotAudio = document.getElementById('autoPilotAudio');
 const keysClingAudio = document.getElementById('keysCling')
 const errorAudio = document.getElementById('errorSound')
 const carVideo = document.getElementById('car_img');
+const honkAudio = document.getElementById('honkAudio');
 
 // car start
 carStart.addEventListener('click', () => {
@@ -69,6 +71,15 @@ carStop.addEventListener("click", () => {
     } else {
         errorAudio.play();
         window.alert('Car is already stopped!');
+    }
+});
+
+// honk
+honkButton.addEventListener('click', () => {
+    if (isStarted) {
+        honkAudio.play();
+    } else {
+        startTheCarAlert();
     }
 });
 
