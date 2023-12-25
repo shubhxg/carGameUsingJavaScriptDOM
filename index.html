@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car game</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="assets/carimage.jpg">
+    <link rel="icon" href="assets/images/carimage.jpg">
 </head>
 
 <body>
     <div class="whole-wrapper">
         <div class="img-container">
-            <h2></h2>
-            <img src="assets/images/carimage.jpg" alt="carimage" id="car_img">
+
+            <video src="assets/images/carVideo.mp4" alt="carvideo" id="car_img" loop muted></video>
 
             <audio id="carStartAudio">
                 <source src="assets/sounds/car_start.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
-            <audio id="carGearUpAudio">
+            <audio id="carGearUpAudio" loop>
                 <source src="assets/sounds/car_gearup.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
-            <audio id="carGearDownAudio">
+            <audio id="carGearDownAudio" loop>
                 <source src="assets/sounds/car_riding.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
-            <audio id="autoPilotAudio">
+            <audio id="autoPilotAudio" loop>
                 <source src="assets/sounds/car_riding.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>

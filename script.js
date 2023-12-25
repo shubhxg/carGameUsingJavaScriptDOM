@@ -12,17 +12,18 @@ const carGearDownAudio = document.getElementById('carGearDownAudio');
 const autoPilotAudio = document.getElementById('autoPilotAudio');
 const keysClingAudio = document.getElementById('keysCling')
 const errorAudio = document.getElementById('errorSound')
+const carVideo = document.getElementById('car_img');
 
 // car start
 carStart.addEventListener('click', () => {
     if (!isStarted) {
         isStarted = true;
         carStartAudio.play();
+        carStarter();
     } else {
         errorAudio.play();
         window.alert('Car is already started!');
     }
-
 });
 
 // car gearup
@@ -30,6 +31,9 @@ carGearUp.addEventListener('click', () => {
     if (isStarted) {
         carGearUpAudio.play();
         resetterForGearUp();
+
+        //speeding up the car
+        carSpeedControl(2.8);
     } else {
         startTheCarAlert();
     }
@@ -40,6 +44,8 @@ carGearDown.addEventListener("click", () => {
     if (isStarted) {
         carGearDownAudio.play();
         resetterForGearDown();
+        // speeding down the car
+        carSpeedControl(1);
     } else {
         startTheCarAlert();
     }
@@ -77,6 +83,8 @@ function resetterForStop() {
     carGearUpAudio.currentTime = 0;
     carGearDownAudio.currentTime = 0;
     autoPilot.currentTime = 0;
+
+    carVideo.pause()
 }
 
 function resetterForGearDown() {
@@ -103,18 +111,17 @@ function resetterForAutoPilot() {
     carGearUpAudio.currentTime = 0;
 }
 
-function startShaking() {
-    const image = document.getElementById('car_img');
-    const imageClone = image.cloneNode(true);
-
-    // Replace the original image with the cloned one
-    image.parentNode.replaceChild(imageClone, image);
-
-    // Add the 'shake' class to start the animation
-    imageClone.classList.add('shake');
-}
-
 function startTheCarAlert() {
     keysClingAudio.play();
     window.alert("First start the car!")
+}
+
+// function to change speed of car video
+function carSpeedControl(speed) {
+    carVideo.playbackRate = speed;
+}
+
+function carStarter() {
+    carVideo.playbackRate = 1;
+    carVideo.play();
 }
