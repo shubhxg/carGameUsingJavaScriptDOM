@@ -102,15 +102,15 @@ body {
   }
 }
 
-.green:hover {
+.buttons-container .btn:active {
   background-color: rgb(0, 57, 0);
 }
 
-.red:hover {
+.buttons-container .btn:active {
   background-color: rgb(85, 0, 0);
 }
 
-.purple:hover {
+.buttons-container .btn:active {
   background-color: rgb(69, 0, 69);
 }
 
