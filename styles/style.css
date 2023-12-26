@@ -27,7 +27,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-.buttons-container :focus{
+.buttons-container :focus {
   outline: none;
 }
 
@@ -123,6 +123,22 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+.inactivebutton {
+  pointer-events: none;
+  color: gray;
+}
+
+.inactivebutton .green {
+  background-color: rgb(0, 57, 0);
+}
+
+.inactivebutton .red {
+  background-color: rgb(85, 0, 0);
+}
+
+.inactivebutton .purple {
+  background-color: rgb(69, 0, 69);
+}
 
 
 /* .shake {

@@ -4,7 +4,19 @@ const carGearUp = document.getElementById('gup');
 const carGearDown = document.getElementById('gdown');
 const autoPilot = document.getElementById('autoPilot');
 const honkButton = document.getElementById('honk');
+
+// Initializing buttons
+
+carGearUp.classList.add("inactivebutton");
+carGearDown.classList.add("inactivebutton");
+carStop.classList.add("inactivebutton");
+autoPilot.classList.add("inactivebutton");
+honkButton.classList.add("inactivebutton");
+
+
 let isStarted = false;
+let gear = 0;
+
 
 // audio elements
 const carStartAudio = document.getElementById('carStartAudio');
@@ -16,10 +28,12 @@ const errorAudio = document.getElementById('errorSound')
 const carVideo = document.getElementById('car_img');
 const honkAudio = document.getElementById('honkAudio');
 
+
+
 // car start
 carStart.addEventListener('click', () => {
-    if (!isStarted) {
-        isStarted = true;
+    if (gear == 0) {
+        // isStarted = true;
         carStartAudio.play();
         carStarter();
     } else {
@@ -30,12 +44,19 @@ carStart.addEventListener('click', () => {
 
 // car gearup
 carGearUp.addEventListener('click', () => {
-    if (isStarted) {
+    if (gear && (gear < 5)) {
+        ++gear;
+        console.log(gear);
         carGearUpAudio.play();
         resetterForGearUp();
 
         //speeding up the car
-        carSpeedControl(2.8);
+        carSpeedControl(carVideo.playbackRate + 0.5);
+
+        if (gear == 5) {
+            carGearUp.classList.add("inactivebutton");
+        }
+
     } else {
         startTheCarAlert();
     }
@@ -43,11 +64,22 @@ carGearUp.addEventListener('click', () => {
 
 // car geardown
 carGearDown.addEventListener("click", () => {
-    if (isStarted) {
+    if (gear) {
+        gear--;
+
         carGearDownAudio.play();
         resetterForGearDown();
+
         // speeding down the car
-        carSpeedControl(1);
+        if (gear){
+            carGearUp.classList.remove("inactivebutton");
+            carSpeedControl(carVideo.playbackRate - 0.5);
+        }
+        else {
+            carSpeedControl(0);
+            resetterForStop();
+        }
+
     } else {
         startTheCarAlert();
     }
@@ -55,7 +87,7 @@ carGearDown.addEventListener("click", () => {
 
 // autopilot
 autoPilot.addEventListener('click', () => {
-    if (isStarted) {
+    if (gear) {
         autoPilotAudio.play();
         resetterForAutoPilot();
     } else {
@@ -65,9 +97,9 @@ autoPilot.addEventListener('click', () => {
 
 // car stop
 carStop.addEventListener("click", () => {
-    if (isStarted) {
+    if (gear > 0) {
         resetterForStop();
-        isStarted = false;
+        gear = 0;
     } else {
         errorAudio.play();
         window.alert('Car is already stopped!');
@@ -76,7 +108,7 @@ carStop.addEventListener("click", () => {
 
 // honk
 honkButton.addEventListener('click', () => {
-    if (isStarted) {
+    if (gear) {
         honkAudio.currentTime = 0;
         honkAudio.play();
     } else {
@@ -97,6 +129,14 @@ function resetterForStop() {
     autoPilot.currentTime = 0;
 
     carVideo.pause()
+
+    carStart.classList.remove("inactivebutton");
+    carGearUp.classList.add("inactivebutton");
+    carGearDown.classList.add("inactivebutton");
+    carStop.classList.add("inactivebutton");
+    autoPilot.classList.add("inactivebutton");
+    honkButton.classList.add("inactivebutton");
+
 }
 
 function resetterForGearDown() {
@@ -134,6 +174,15 @@ function carSpeedControl(speed) {
 }
 
 function carStarter() {
+    gear = 1;
     carVideo.playbackRate = 1;
     carVideo.play();
+
+    carStart.classList.add("inactivebutton");
+    carGearUp.classList.remove("inactivebutton");
+    carGearDown.classList.remove("inactivebutton");
+    carStop.classList.remove("inactivebutton");
+    autoPilot.classList.remove("inactivebutton");
+    honkButton.classList.remove("inactivebutton");
+
 }
