@@ -1,6 +1,14 @@
-## Practicing DOM skills with this
+# Car game to practice my DOM skills in JS 🚓
 
-![Car Game Screenshot](https://github.com/shubhsharma19/carGameUsingJavaScriptDOM/assets/69891912/cede37e6-33cf-452f-bde5-910efa7a919c)
+![Screenshot from 2023-12-26 19-11-25](https://github.com/shubhsharma19/carGameUsingJavaScriptDOM/assets/69891912/47b0e857-ae0a-4cfe-9762-820217709a52)
+
+## Features
+- Start the car
+- Each gearup speeds up the car slowly till it reaches certain speed (5 gears)
+- Gear down till stops
+- Stop the car
+- Autopilot (this isn't tesla, don't get your hopes high)
+- Horn (because a car without horn is stupid)
 
 
-link: https://cargameusingdom.netlify.app/
+Play [here](https://cargameusingdom.netlify.app/)
