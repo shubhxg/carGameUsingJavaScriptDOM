@@ -90,12 +90,12 @@ body {
   /* Your styles for devices with width less than 400px go here */
   .img-container {
     align-items: flex-start;
-    margin-top: 2rem;
+    margin-top: 1rem;
     height: 40vh;
   }
 
   #car_img {
-    max-width: 80vw;
+    max-width: 85vw;
   }
 
   .whole-wrapper {
