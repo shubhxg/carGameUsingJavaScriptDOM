@@ -10,6 +10,12 @@ body {
   padding: 0px;
 }
 
+.whole-wrapper{
+  background: url("../assets/images/carTH.jpg");
+  backdrop-filter: blur(30px);
+  background-size: cover;
+}
+
 
 .img-container {
   width: 100vw;
@@ -17,6 +23,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.whole-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 0, 28, 0.856); /* Semi-transparent black overlay */
+  z-index: -1; 
 }
 
 .buttons-container {
