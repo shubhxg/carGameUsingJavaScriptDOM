@@ -23,8 +23,7 @@ const carStartAudio = document.getElementById('carStartAudio');
 const carGearUpAudio = document.getElementById('carGearUpAudio');
 const carGearDownAudio = document.getElementById('carGearDownAudio');
 const autoPilotAudio = document.getElementById('autoPilotAudio');
-const keysClingAudio = document.getElementById('keysCling')
-const errorAudio = document.getElementById('errorSound')
+// const keysClingAudio = document.getElementById('keysCling')
 const carVideo = document.getElementById('car_img');
 const honkAudio = document.getElementById('honkAudio');
 
