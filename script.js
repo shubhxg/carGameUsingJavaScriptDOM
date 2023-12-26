@@ -32,7 +32,7 @@ const honkAudio = document.getElementById('honkAudio');
 
 // car start
 carStart.addEventListener('click', () => {
-    if (gear == 0) {
+    if (!gear) {
         // isStarted = true;
         carStartAudio.play();
         carStarter();
