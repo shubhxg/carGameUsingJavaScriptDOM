@@ -127,6 +127,8 @@ function resetterForStop() {
             clearInterval(speedInterval); // Stop decreasing speed once it reaches 0
             carVideo.playbackRate = 0; // Ensure playback rate is set to 0
             carVideo.pause();
+            carVideo.currentTime = 0;
+
         }
     }, 100); // Adjust the interval as needed
 
