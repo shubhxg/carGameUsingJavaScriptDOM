@@ -117,20 +117,26 @@ honkButton.addEventListener('click', () => {
 
 // audio resetters--------------
 function resetterForStop() {
+    
     // Gradually decrease the speed before stopping
-    const speedDecrement = 0.1; // Adjust this value for the decrement speed
+    const speedDecrement = 0.1;
 
     const speedInterval = setInterval(() => {
         if (carVideo.playbackRate > speedDecrement) {
             carVideo.playbackRate -= speedDecrement;
         } else {
-            clearInterval(speedInterval); // Stop decreasing speed once it reaches 0
-            carVideo.playbackRate = 0; // Ensure playback rate is set to 0
+            // Stop decreasing speed once it reaches 0
+            clearInterval(speedInterval);
+            
+            // Ensure playback rate is set to 0
+            carVideo.playbackRate = 0; 
             carVideo.pause();
+            
+            // changing the car video back to 0
             carVideo.currentTime = 0;
 
         }
-    }, 100); // Adjust the interval as needed
+    }, 100);
 
     // Resetting other elements
     carStartAudio.pause();
@@ -187,20 +193,22 @@ function carSpeedControl(speed) {
 
 function carStarter() {
     gear = 1;
-    carVideo.playbackRate = gear; // Start with a slow initial speed
+    carVideo.playbackRate = gear;
     carVideo.play();
 
     // Gradually increase the speed
-    const targetSpeed = 1; // Adjust this value to your desired speed
-    const speedIncrement = 0.25; // Adjust this value for the increment speed
+    const targetSpeed = 1; 
+    const speedIncrement = 0.25; 
 
     const speedInterval = setInterval(() => {
         if (carVideo.playbackRate < targetSpeed) {
             carVideo.playbackRate += speedIncrement;
         } else {
-            clearInterval(speedInterval); // Stop increasing speed once the target is reached
+            
+            // Stop increasing speed once the target is reached
+            clearInterval(speedInterval); 
         }
-    }, 500); // Adjust the interval as needed
+    }, 500);
 
     carStart.classList.add("inactivebutton");
     carGearUp.classList.remove("inactivebutton");
