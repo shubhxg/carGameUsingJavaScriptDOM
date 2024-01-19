@@ -1,4 +1,4 @@
-# Car game to practice my DOM skills in JS 🚓
+# Car game using JS DOM 🚓
 
 ![Screenshot from 2023-12-26 19-11-25](https://github.com/shubhsharma19/carGameUsingJavaScriptDOM/assets/69891912/47b0e857-ae0a-4cfe-9762-820217709a52)
 
